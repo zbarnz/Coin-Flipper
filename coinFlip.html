@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav style="background-color: blue">
+      <div>
+        <h1>Coin Flipper</h1>
+      </div>
+      <hr />
+    </nav>
+    <img
+      id="coinpic"
+      src="/blank.jpg"
+      alt="coin"
+      style="height: 250px; width: 250px"
+    />
+    <button id="flipbutton" onclick="flipCoin()">Flip</button>
+    <script>
+      let flipCoin = () => {
+        let ht = Math.floor(Math.random() * 2);
+        setTimeout(function () {
+          if (ht == 0) {
+            document.getElementById("coinpic").src = "/head.jpg";
+          } else {
+            document.getElementById("coinpic").src = "/tails.jpg";
+          }
+          document.getElementById("flipbutton").disabled = false;
+        }, 1500);
+        document.getElementById("flipbutton").disabled = true;
+        document.getElementById("coinpic").src =
+          "https://media1.tenor.com/images/938e1fc4fcf2e136855fd0e83b1e8a5f/tenor.gif?itemid=5017733";
+      };
+    </script>
+  </body>
+</html>
